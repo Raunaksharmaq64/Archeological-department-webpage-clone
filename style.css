@@ -1,0 +1,241 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7f6;
+    color: #212529;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+.main-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+/* Tabs Header */
+.tabs-header {
+    display: flex;
+    gap: 2px;
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
+}
+
+.tab-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s;
+}
+
+.tab-item.active {
+    background-color: #adb5bd;
+    color: #000;
+    font-weight: bold;
+    border-color: #adb5bd;
+}
+
+/* Content Card */
+.content-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+    margin-top: -1px;
+    /* Overlap with tabs */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image Slider */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #000;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.slider-nav:hover {
+    color: #fff;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.dot {
+    width: 20px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* Tab Panes */
+.tab-panes {
+    padding: 25px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.content-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.audio-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+audio {
+    width: 100%;
+    max-width: 90%;
+}
+
+.content-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #212529;
+}
+
+/* Brochure Tab Content */
+.brochure-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.brochure-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #198754;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.3s;
+    font-size: 15px;
+}
+
+.brochure-btn:hover {
+    background-color: #157347;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        height: 300px;
+    }
+
+    .main-container {
+        padding: 5px;
+    }
+
+    .tabs-header {
+        padding-left: 5px;
+    }
+}
